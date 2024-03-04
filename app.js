@@ -7,8 +7,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-	res.send("Hello");
+app.get("/signin", (req, res) => {
+	res.render("signin");
+});
+
+app.get("/dashboard", (req, res) => {
+	res.render("dashboard");
+});
+
+app.get("/employee", (req, res) => {
+	res.render("employee");
 });
 
 app.listen(PORT, () => {
